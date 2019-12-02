@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#mnist="/home/filippo/Scrivania/MNIST"
 mnist="/media/faleotti/SSD/MNIST"
 step=18000
 batch=128
