@@ -98,7 +98,7 @@ def train():
             loss_value, _ = session.run([loss, optimization_op])
             elapsed_time = time.time() - start
             if step and step % 1000 == 0:
-                print('step:{}/{} | loss:{} | elapsed time:{}h:{}m:{}s'.format(step, args.step, loss_value, elapsed_time // (3600), elapsed_time // (60), int(elapsed_time)))
+                print('step:{}/{} | loss:{:7.6f} | elapsed time: {:2.0f}m:{:2.0f}s'.format(step, args.step, loss_value, elapsed_time // (60), int(elapsed_time)%60))
         saver.save(session, './trained_models/model', global_step=args.step)
     print('Training ended!')
 

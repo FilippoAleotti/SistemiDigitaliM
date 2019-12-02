@@ -55,7 +55,7 @@ def train():
             loss_value, _ = session.run([loss, optimization_op], feed_dict={x:next_batch['images'], labels:next_batch['labels']})
             elapsed_time = time.time() - start
             if step and step % 1000 == 0:
-                print('step:{}/{} | loss:{} | elapsed time:{}h:{}m:{}s'.format(step, args.step, loss_value, elapsed_time // (3600), elapsed_time // (60), int(elapsed_time)))
+                print('step:{}/{} | loss:{:7.6f} | elapsed time: {:2.0f}m:{:2.0f}s'.format(step, args.step, loss_value, elapsed_time // (60), int(elapsed_time)%60))
             
             if step and  args.validation_step > 0 and step % args.validation_step == 0:
                 good_predictions = 0
