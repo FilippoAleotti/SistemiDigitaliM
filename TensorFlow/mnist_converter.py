@@ -93,12 +93,12 @@ if __name__ == '__main__':
     create_dir(os.path.join(dest,'train','images'))
     create_dir(os.path.join(dest,'validation','images'))
     create_dir(os.path.join(dest,'full_train','images'))
-    """
+    
     for x in looking_for_files:
         extract(os.path.join(args.dataset, x))
     for x in  ['train-images.idx3-ubyte', 'train-labels.idx1-ubyte']:
         extract(os.path.join(args.dataset, x), full=True)
-    """
+    
     with open(os.path.join(dest,'full_train','labels.txt'),'r') as f:
         full_train_labels = f.readlines()
     with open(os.path.join(dest,'full_train','dataset.txt'),'w') as f:
